@@ -53,45 +53,47 @@ def getAIAData(name, birth, gender):
     scrapingResult['contents'] = "보장내역..."
     return scrapingResult
 
-def getRinaData(name, birth, gender):  
-    driver = webdriver.Chrome('./chromedriver')
+def getLinaData(name, birth, gender):  
+    driver = webdriver.Chrome(options=option)
     scrapingResult = {
         'company': "라이나",
         'price': 0,
         'contents': []
     }
-    driver.get('https://direct.lina.co.kr/product/ess/dtc01/easy')
-    textBox = driver.find_element(By.XPATH,'//*[@id="birthday"]')
-    textBox.send_keys(birth)
-    if gender == 1:
-        femaleBtn = driver.find_element(By.XPATH,'//*[@id="main_btn_female"]')
-        femaleBtn.click()
-    else:
-        maleBtn = driver.find_element(By.XPATH,'//*[@id="main_btn_male"]')
-        maleBtn.click()
-    resultBtn = driver.find_element(By.XPATH,
-        '//*[@id="btn_direct_dental_cal"]')
-    resultBtn.click()
-    driver.implicitly_wait(3)
+    # driver.get('https://direct.lina.co.kr/product/insurance-product-cm/productView_P00176')
+    # textBox = driver.find_element(By.XPATH,'//*[@id="__layout"]/div/div[3]/div/div[1]/div/div[1]/form/div/div/div[2]/div/div/input')
+    # textBox.send_keys(birth)
+    # if gender == 1:
+    #     femaleBtn = driver.find_element(By.XPATH,'//*[@id="__layout"]/div/div[3]/div/div[1]/div/div[1]/form/div/div/div[3]/div/label[2]')
+    #     femaleBtn.click()
+    # else:
+    #     maleBtn = driver.find_element(By.XPATH,'//*[@id="__layout"]/div/div[3]/div/div[1]/div/div[1]/form/div/div/div[3]/div/label[1]')
+    #     maleBtn.click()
+    # resultBtn = driver.find_element(By.XPATH,
+    #     '//*[@id="__layout"]/div/div[3]/div/div[1]/div/div[2]/button')
+    # resultBtn.click()
+    # driver.implicitly_wait(3)
 
-    htmlResult = driver.find_element(By.XPATH,
-        '//*[@id="contents"]/div[2]/div[2]/div[2]/div/table/tbody[1]/tr[1]/td[2]/strong').text
-    resultValue = rePlaceData(htmlResult)
+    scrapingResult['contents'] = 'test'
+    scrapingResult['price'] = 2000
+    # htmlResult = driver.find_element(By.XPATH,
+    #     '//*[@id="contents"]/div[2]/div[2]/div[2]/div/table/tbody[1]/tr[1]/td[2]/strong').text
+    # resultValue = rePlaceData(htmlResult)
 
-    print(resultValue)
+    # print(resultValue)
 
-    scrapingResult['price'] = resultValue
-    driver.implicitly_wait(2)
-    detailBtn = driver.find_element(By.XPATH,'//*[@id="openLayerplanPonA2"]')
-    detailBtn.click()
-    driver.implicitly_wait(2)
+    # scrapingResult['price'] = resultValue
+    # driver.implicitly_wait(2)
+    # detailBtn = driver.find_element(By.XPATH,'//*[@id="openLayerplanPonA2"]')
+    # detailBtn.click()
+    # driver.implicitly_wait(2)
 
-    tableBody = driver.find_element(By.XPATH, '//*[@id="planPonA2"]/div/div[2]/div/div/table[1]').find_element(By.TAG_NAME,'tbody')
-    rows = tableBody.find_elements(By.TAG_NAME,"tr")
-    contentsList = []
-    for index, value in enumerate(rows):
-        if index != 0:
-            print(value.find_elements(By.TAG_NAME,'th')[0].text)
-            contentsList.append(value.find_elements(By.TAG_NAME,'th')[0].text)
-    scrapingResult['contents'] = contentsList
+    # tableBody = driver.find_element(By.XPATH, '//*[@id="planPonA2"]/div/div[2]/div/div/table[1]').find_element(By.TAG_NAME,'tbody')
+    # rows = tableBody.find_elements(By.TAG_NAME,"tr")
+    # contentsList = []
+    # for index, value in enumerate(rows):
+    #     if index != 0:
+    #         print(value.find_elements(By.TAG_NAME,'th')[0].text)
+    #         contentsList.append(value.find_elements(By.TAG_NAME,'th')[0].text)
+    # scrapingResult['contents'] = contentsList
     return scrapingResult
