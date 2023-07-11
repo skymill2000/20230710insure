@@ -11,4 +11,7 @@ tableRows = table.find_elements(By.TAG_NAME, 'tr')
 for index, value in enumerate(tableRows):
     title = value.find_elements(By.TAG_NAME, 'td')[5].text
     print(title)
+    
     #좋아요 갯수 출력
+    likes = value.find_elements(By.TAG_NAME, 'td')[7].text
+    print(likes)
