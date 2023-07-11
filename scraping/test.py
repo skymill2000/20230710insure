@@ -1,5 +1,10 @@
 from selenium import webdriver
-driver = webdriver.Chrome('./chromedriver')
+from selenium.webdriver.common.by import By
+driver = webdriver.Chrome()
 # 크롬을 통해서 스크래핑을 진행 크롬 드라이버 로딩
 
-driver.get('https://naver.com');
+driver.get('https://www.etnews.com/20230710000227')
+#/html/body/section/section/article/div[1]/h2
+
+title = driver.find_element(By.XPATH, '/html/body/section/section/article/div[1]/h2')
+print(title.text)
