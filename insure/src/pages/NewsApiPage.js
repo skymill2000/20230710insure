@@ -1,15 +1,28 @@
 import React, { useState } from "react";
 import AppHeader from "../components/common/AppHeader";
 import SearchInput from "../components/news/SearchInput";
+import axios from "axios";
+import NewsList from "../components/news/NewsList";
 
 const NewsApiPage = () => {
   const [searchText, setSearchText] = useState();
   const [searchResult, setSearchResult] = useState([]);
-  const handleChange = () => {
+
+  const handleChange = (e) => {
     console.log("값이 변해요");
+    const searchText = e.target.value;
+    setSearchText(searchText);
   };
+
   const handleClick = () => {
-    console.log("클릭이벤트 변해요");
+    console.log(searchText);
+    let requestUrl = `https://newsapi.org/v2/everything?q=${searchText}&from=2023-06-12&sortBy=publishedAt&apiKey=78bc6ddd8cdb48ceac76f5f9b9dfc4c5`;
+    axios.get(requestUrl).then(function ({ data }) {
+      // handle success
+      console.log(data.articles);
+      setSearchResult(data.articles);
+    });
+    // axios.get()
   };
 
   return (
@@ -19,10 +32,7 @@ const NewsApiPage = () => {
         handleChange={handleChange}
         handleClick={handleClick}
       ></SearchInput>
-      {/* 
-            <searchInput/>
-            <newsList>        
-      */}
+      <NewsList newsList={searchResult}></NewsList>
     </div>
   );
 };
