@@ -20,5 +20,29 @@ let histRowKey = data.HIST_ROW_KEY;
 let corpCardNo = data.CORP_BIZ_NO;
 //...
 
-const { HIST_ROW_KEY, CORP_BIZ_NO, FCODE } = data;
+const {
+  HIST_ROW_KEY,
+  CORP_BIZ_NO,
+  FCODE,
+  FCODE_NM,
+  CARD_NO,
+  CUR_CD,
+  APPR_AMT_TOT,
+} = data;
+
 console.log(HIST_ROW_KEY);
+
+console.log(
+  FCODE_NM +
+    " 은행에 " +
+    CARD_NO +
+    " 번호 승인 금액은 " +
+    APPR_AMT_TOT +
+    " " +
+    CUR_CD +
+    " 입니다"
+);
+
+console.log(
+  `${FCODE_NM} 카드사 ${CARD_NO} 번호 승인 금액은 ${APPR_AMT_TOT} ${CUR_CD} 입니다.`
+);
