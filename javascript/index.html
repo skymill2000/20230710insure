@@ -1,19 +1,44 @@
 <html>
-  <body>
+  <body className="App">
     <h1 style="color: red;">안녕하세요</h1>
-    <h2>html 만 활용하여 사이트를 구성합니다.</h2>
+    <h2 className="App-header">html 만 활용하여 사이트를 구성합니다.</h2>
     <a href="https://naver.com">네이버로 이동합니다.</a>
     <input></input>
     <button class="btn" onclick="btnClick()">전송하기</button>
   </body>
   <style>
-    h1 {
-      color: #00ff00;
-    }
-    .btn {
-      border: brown solid 1px;
-    }
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
   </style>
+  <script src="/test.js"></script>
     <script>
         alert("반갑습니다.");
         function btnClick() {
