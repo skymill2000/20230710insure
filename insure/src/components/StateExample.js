@@ -2,11 +2,22 @@ import React, { useState } from "react";
 
 const StateExample = () => {
   const [name, setName] = useState("홍길동");
-  setInterval(() => {
-    // name = '둘리'
-    setName("둘리");
-  }, 5000);
-  return <div>{name}</div>;
+  const handleClick = () => {
+    console.log(name);
+  };
+  const handleChange = (e) => {
+    console.log(e);
+    const writtenName = e.target.value;
+    setName(writtenName);
+  };
+
+  return (
+    <div>
+      <p>{name}</p>
+      이름: <input onChange={handleChange}></input>
+      <button onClick={handleClick}>입력</button>
+    </div>
+  );
 };
 
 export default StateExample;
