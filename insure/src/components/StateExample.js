@@ -4,6 +4,7 @@ const StateExample = () => {
   const [name, setName] = useState("홍길동");
   const handleClick = () => {
     console.log(name);
+    alert(name);
   };
   const handleChange = (e) => {
     console.log(e);
