@@ -4,17 +4,12 @@ import axios from "axios";
 const AxiosExample = () => {
   const handleClick = () => {
     axios
-      .get("주소")
+      .get(
+        "https://newsapi.org/v2/everything?q=테슬라&from=2023-06-12&sortBy=publishedAt&apiKey=78bc6ddd8cdb48ceac76f5f9b9dfc4c5"
+      )
       .then(function (response) {
         // handle success
         console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(function () {
-        // always executed
       });
   };
   return (
