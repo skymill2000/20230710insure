@@ -10,8 +10,8 @@ const ListExample = () => {
 
   return (
     <div>
-      {list.map((el) => {
-        return <Welcome username={el.username} age={el.age}></Welcome>;
+      {list.map(({ username, age }) => {
+        return <Welcome username={username} age={age}></Welcome>;
       })}
     </div>
   );
