@@ -1,7 +1,12 @@
 import React from "react";
 
 const AxiosExample = () => {
-  return <div>AxiosExample</div>;
+  const handleClick = () => {};
+  return (
+    <div>
+      <button onClick={handleClick}>조회하기</button>
+    </div>
+  );
 };
 
 export default AxiosExample;
