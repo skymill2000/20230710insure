@@ -5,11 +5,11 @@ const AxiosExample = () => {
   const handleClick = () => {
     axios
       .get(
-        "https://newsapi.org/v2/everything?q=테슬라&from=2023-06-12&sortBy=publishedAt&apiKey=78bc6ddd8cdb48ceac76f5f9b9dfc4c5"
+        "https://apis.data.go.kr/1160100/service/GetMedicalReimbursementInsuranceInfoService/getInsuranceInfo?serviceKey=uiu3ZzNzDB04UbxOtOL1atH04WOtxB5WSKkPbaCASVHbwgcsIPwHA5Qp6xOmSe6fzCnUVifZcfTXDkgNegv4qQ%3D%3D&resultType=json"
       )
-      .then(function (response) {
+      .then(function ({ data }) {
         // handle success
-        console.log(response);
+        console.log(data);
       });
   };
   return (

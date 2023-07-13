@@ -3,6 +3,7 @@ import ListExample from "./components/ListExample";
 import QRcode from "./components/QRcode";
 import AxiosExample from "./components/AxiosExample";
 import NewsApiPage from "./pages/NewsApiPage";
+import HospitalSearchPage from "./pages/HospitalSearchPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/qr" element={<QRcode />}></Route>
         <Route path="/axios" element={<AxiosExample />}></Route>
         <Route path="/news" element={<NewsApiPage />}></Route>
+        <Route path="/hospital" element={<HospitalSearchPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
