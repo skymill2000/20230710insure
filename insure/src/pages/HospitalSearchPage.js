@@ -17,9 +17,10 @@ const HospitalSearchPage = () => {
       url: "http://apis.data.go.kr/B551182/hospInfoServicev2/getHospBasisList",
       params: {
         ServiceKey:
-          "uiu3ZzNzDB04UbxOtOL1atH04WOtxB5WSKkPbaCASVHbwgcsIPwHA5Qp6xOmSe6fzCnUVifZcfTXDkgNegv4qQ==",
+          "uiu3ZzNzDB04UbxOtOL1atH04WOtxB5WSKkPbaCASVHbwgcsIPwHA5Qp6xOmSe6fzCnUVifZcfTXDkgNegv4qQ%3D%3D",
         //   서비스키 본인것으로 변경
         emdongNm: searchInputText,
+        clCd: 31,
       },
     };
     axios(option).then(function ({ data }) {
