@@ -8,8 +8,8 @@ const sha256Enc = (plainText) => {
 
 const AESEncrypt = (plainTxt) => {
   const algorithm = "aes-256-cbc";
-  const key = "H3uVnnOnNIXXsH63CsgswUsmICSCdVsn";
-  const iv = "dwUgwmwOndnJOmOX";
+  const key = "tDAArT4tgoJra4AVYYUgt9Nvb9aImrTm";
+  const iv = "oNYgvfAAoAUb9mmD";
   const cipher = createCipheriv(algorithm, key, iv);
   let encrypted = cipher.update(plainTxt, "utf8", "base64");
   encrypted += cipher.final("base64");
@@ -17,15 +17,13 @@ const AESEncrypt = (plainTxt) => {
   console.log("b3Bu7QBZ0q96+f2GY2NQmaT1XnZElI1+wRdSHBOY01s=" === encrypted);
 };
 
-AESEncrypt("!Kwic123테스트");
+AESEncrypt("19890119");
 
 //H3uVnnOnNIXXsH63CsgswUsmICSCdVsn 키
 //dwUgwmwOndnJOmOX IV
 //!Kwic123테스트 원문
 //b3Bu7QBZ0q96+f2GY2NQmaT1XnZElI1+wRdSHBOY01s= 암호화된 결과
-
 // sha256Enc("!Kwic123테스트");
-
 // sha256Enc("password");
 // sha256Enc("passwors");
 
